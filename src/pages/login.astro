@@ -1,0 +1,41 @@
+---
+import { Icon } from "astro-icon";
+import Layout from "../layouts/Layout.astro";
+import { SignIn, SignOut } from "auth-astro/components";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+    </head>
+    <body class="dark text-gray-300">
+        <div
+            class="flex h-screen w-screen items-center justify-center bg-gray-900"
+        >
+            <div class="w-3/4 max-w-96 rounded bg-gray-800">
+                <h1 class="pt-2 text-center text-2xl font-semibold">Login</h1>
+                <div class="m-3 flex flex-col gap-2">
+                    <SignIn provider="github">
+                        <div
+                            class="flex gap-2 rounded border border-[#555] bg-[#171515] p-2 text-lg"
+                        >
+                            <Icon name="github" class="mr-1 h-7" />
+                            <p>Sign in with GitHub</p>
+                        </div>
+                    </SignIn>
+                    <SignIn provider="azure-ad">
+                        <div
+                            class="flex gap-2 rounded border border-[#555] bg-[#171515] p-2 text-lg"
+                        >
+                            <Icon name="microsoft-logo" class="mr-1 h-7" />
+                            <p>Sign in with Microsoft</p>
+                        </div>
+                    </SignIn>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+---
+import { getAvatar } from "@lib/avatar";
+import { getSession } from "auth-astro/server";
+
+import SvelteProfile from "./svelte/Profile.svelte";
+
+const session = await getSession(Astro.request);
+if (!session?.user) return Astro.redirect("/login", 302);
+
+let avatarUrl = await getAvatar(session.user);
+---
+
+<SvelteProfile
+    client:visible
+    {avatarUrl}
+    userName={session.user.name || "Unknown"}
+    userDetail={session.user.email || ""}
+/>

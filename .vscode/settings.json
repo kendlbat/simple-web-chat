@@ -1,0 +1,19 @@
+{
+    "prettier.documentSelectors": ["**/*.astro"],
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.indentSize": 4,
+    "[astro]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    },
+    "[svg]": {
+        "editor.defaultFormatter": "jock.svg"
+    }
+}
