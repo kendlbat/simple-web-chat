@@ -17,4 +17,5 @@ export default defineConfig({
         }),
     ],
     secret: import.meta.env.AUTHJS_SECRET,
+    trustHost: true,
 });

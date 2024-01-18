@@ -1,4 +1,4 @@
-version: "3.1"
+version: "3.7"
 services:
     mongo:
         image: mongo:latest
@@ -6,5 +6,12 @@ services:
         ports:
             - 27017:27017
         volumes:
-            - ./data:/data/db
+            - /var/docker_data/webchat-mongo:/data/db
+        restart: always
+    web:
+        build: .
+        ports:
+            - 4321:4321
+        depends_on:
+            - mongo
         restart: always

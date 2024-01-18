@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getSession } from "auth-astro/server";
+import Chat from "@components/svelte/Chat.svelte";
 
 const session = await getSession(Astro.request);
 if (!session) return Astro.redirect("/login", 302);
 ---
 
 <Layout title="Welcome to Astro.">
-    <h1 class="p-2 text-2xl">Logged in!</h1>
+    <Chat client:load />
 </Layout>
